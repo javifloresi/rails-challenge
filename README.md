@@ -18,17 +18,17 @@ https://www.loom.com/share/cd416823d26542258adcc96931ed8df5
 
 
 ## CHALLENGE RELATED FILES
-1. config/routes.rb
-2. app/controllers/employees_controller.rb
-3. app/adapters/employee_adapter.rb
-4. app/services/api_service.rb
-5. app/models/employee.rb
-6. app/views/employees/index.html.erb
-7. config/initializers/api_config.rb
-8. env
-9. Dockerfile
-10. docker-compose.yml
-11. Dockerfile.prod
+1. [Routes](config/routes.rb)
+2. [Employees Controller](app/controllers/employees_controller.rb)
+3. [Employees Adapter](app/adapters/employee_adapter.rb)
+4. [API Service](app/services/api_service.rb)
+5. [Employee Model](app/models/employee.rb)
+6. [Tailwind View](app/views/employees/index.html.erb)
+7. [ENVs Configuration](config/initializers/api_config.rb)
+8. [Credentials storage](env) sholud be ignored in production deployment
+9. [Dockerfile](Dockerfile)
+10. [Docker compose](docker-compose.yml)
+11. [Dockerfile for prod build](Dockerfile.prod)
 
 
 
