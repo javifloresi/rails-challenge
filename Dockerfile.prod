@@ -1,0 +1,54 @@
+# Use an official Ruby runtime as a parent image
+FROM ruby:3.2
+
+# Set environment variables for production
+ENV RAILS_ENV=production
+ENV RAILS_ROOT /var/www/myapp
+
+
+
+ENV CLIENT_ID ''
+ENV CLIENT_SECRET ''
+ENV API_USERNAME ''
+ENV API_PASSWORD ''
+
+ENV NODE_OPTIONS="--openssl-legacy-provider"
+
+# Install essential packages
+RUN apt-get update -qq && apt-get install -y \
+  nodejs \
+  postgresql-client \
+  npm \
+  curl \
+  gnupg2 \
+  build-essential \
+  libpq-dev
+
+# Install Yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update -qq && \
+    apt-get install -y yarn
+
+# Create the application directory
+RUN mkdir -p $RAILS_ROOT
+WORKDIR $RAILS_ROOT
+
+# Install Bundler and app dependencies
+RUN gem install bundler
+COPY Gemfile Gemfile.lock ./
+RUN bundle install --without development test
+
+# Copy the application code
+COPY . .
+
+# Precompile assets and clean up
+RUN rake assets:clobber && \
+    bundle exec rake assets:precompile && \
+    bundle exec rake assets:clean
+
+# Expose port 80
+EXPOSE 80
+
+# Start the Rails server
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "80"]
