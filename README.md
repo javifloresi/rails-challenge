@@ -4,7 +4,7 @@
 
 
 ## Live app
-[rails-challenge-drr8c.ondigitalocean.app] (https://rails-challenge-drr8c.ondigitalocean.app)
+[https://rails-challenge-drr8c.ondigitalocean.app](https://rails-challenge-drr8c.ondigitalocean.app)
 
 
 ## PROJECT DESCRIPTION
