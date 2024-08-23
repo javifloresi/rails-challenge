@@ -3,7 +3,7 @@
 ![Screenshot](public/main-view.png)
 
 
-## Live app
+## LIVE APP
 [https://rails-challenge-drr8c.ondigitalocean.app](https://rails-challenge-drr8c.ondigitalocean.app)
 
 
