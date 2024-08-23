@@ -3,6 +3,10 @@
 ![Screenshot](public/main-view.png)
 
 
+## Live app
+[rails-challenge-drr8c.ondigitalocean.app] (https://rails-challenge-drr8c.ondigitalocean.app)
+
+
 ## PROJECT DESCRIPTION
 https://www.loom.com/share/ab8d71ea6c0d4ae88751f8a684e70894
 
